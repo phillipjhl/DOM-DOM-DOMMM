@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', function() {
     let button = document.createElement('button');
     button.innerText = 'Add Square';
