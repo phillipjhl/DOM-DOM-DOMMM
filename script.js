@@ -1,10 +1,12 @@
 
 
 document.addEventListener('DOMContentLoaded', function () {
+    let btnDiv = document.createElement('div')
+    document.body.appendChild(btnDiv);
     let button = document.createElement('button');
     button.innerText = 'Add Square';
     button.style.position = 'absolute';
-    document.body.appendChild(button);
+    btnDiv.appendChild(button);
 
     button.addEventListener('click', function () {
         let num = document.body.getElementsByClassName('square').length;
@@ -37,14 +39,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         div.addEventListener('dblclick', function () {
             let id = Number(this.id);
-            let right = document.getElementById(id + 1);
-            let left = document.getElementById(id - 1);
+            let right = document.getElementById(this.id).nextElementSibling;
+            let left = document.getElementById(this.id).previousElementSibling;
             if (id % 2 === 0) {
                 if (!right) {
                     alert('There are no more boxes to the right!')
                 }
                 else {
-                    let removeDiv = document.getElementById(id + 1);
+                    let removeDiv = document.getElementById(this.id).nextElementSibling;
                     document.body.removeChild(removeDiv);
                 }
             }
@@ -53,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     alert('There are no boxes to the left!');
                 }
                 else {
-                    let removeDiv = document.getElementById(id - 1);
+                    let removeDiv = document.getElementById(this.id).previousElementSibling;
                     document.body.removeChild(removeDiv);
                 }
             }
