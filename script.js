@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
             let id = Number(this.id);
             let right = document.getElementById(this.id).nextElementSibling;
             let left = document.getElementById(this.id).previousElementSibling;
-            let checkName = document.getElementsByClassName(this.id).previousElementSibling;
                 if (id % 2 === 0) {
                     if (!right) {
                         alert('There are no more boxes to the right!')
